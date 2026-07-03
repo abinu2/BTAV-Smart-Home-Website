@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts are loaded via next/font in app/layout.tsx (self-hosted, preloaded,
+   no layout shift, no render-blocking external request). */
+
+/* ============================================================
+   DESIGN TOKENS — refined, restrained palette.
+   Near-monochrome charcoal + warm off-white, with a single muted
+   teal accent and a champagne "premium" tone used sparingly.
+   ============================================================ */
+:root {
+  --color-bg: #0c0d11;
+  --color-surface: #14161c;
+  --color-surface-2: #1d2028;
+  --color-signal: #5fbeb2; /* refined teal — interactive / technical */
+  --color-ember: #cba46c; /* champagne — premium / Control4 */
+  --color-accent: #5fbeb2;
+  --color-gold: #cba46c;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-lit: rgba(255, 255, 255, 0.16);
+  --color-text-1: #f3f1ec;
+  --color-text-2: #a2a9b4;
+  --color-text-3: #79828f;
+
+  /* Glass */
+  --glass-bg: rgba(20, 22, 28, 0.55);
+  --glass-bg-heavy: rgba(12, 13, 17, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-heavy: rgba(255, 255, 255, 0.12);
+  --glass-blur: blur(16px);
+  --glass-blur-heavy: blur(24px);
+
+  /* Soft glows — used sparingly. */
+  --glow-signal: 0 0 28px rgba(95, 190, 178, 0.14);
+  --glow-ember: 0 0 28px rgba(203, 164, 108, 0.14);
+  --glow-blue: var(--glow-signal);
+  --glow-gold: var(--glow-ember);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html {
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-1);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(95, 190, 178, 0.24);
+  color: var(--color-text-1);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   GLASS / GLOW UTILITIES
+   ============================================================ */
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+  }
+  .glass-heavy {
+    background: var(--glass-bg-heavy);
+    backdrop-filter: var(--glass-blur-heavy);
+    -webkit-backdrop-filter: var(--glass-blur-heavy);
+    border: 1px solid var(--glass-border-heavy);
+  }
+  .glow-blue,
+  .glow-signal {
+    box-shadow: var(--glow-signal);
+  }
+  .glow-gold,
+  .glow-ember {
+    box-shadow: var(--glow-ember);
+  }
+  /* Restrained gradient type — a single subtle wash, not a rainbow. */
+  .text-gradient {
+    background: linear-gradient(120deg, #f3f1ec 0%, #a8d8d0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .text-gradient-gold,
+  .text-gradient-ember {
+    background: linear-gradient(120deg, #e4c79a 0%, #cba46c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  /* Emphasis wash for display headlines — off-white into the accent only. */
+  .text-cinematic {
+    background: linear-gradient(120deg, #f3f1ec 0%, #7fcabf 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+/* ============================================================
+   BLUEPRINT GRID — very faint technical texture (not decoration).
+   ============================================================ */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.blueprint-grid-fine {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.blueprint-fade {
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 70% at 50% 40%,
+    black 30%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 70% at 50% 40%,
+    black 30%,
+    transparent 100%
+  );
+}
+
+/* Soft ambient wash for hero/section backdrops (static, no drift). */
+.ambient-wash {
+  background-image:
+    radial-gradient(60% 55% at 78% 12%, rgba(95, 190, 178, 0.08) 0%, transparent 70%),
+    radial-gradient(55% 50% at 12% 92%, rgba(203, 164, 108, 0.06) 0%, transparent 70%);
+}
+
+/* Legacy aliases kept so existing markup still resolves, now calm + static. */
+.btav-mesh {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(50% 50% at 80% 15%, rgba(95, 190, 178, 0.08) 0%, transparent 70%),
+    radial-gradient(50% 50% at 15% 90%, rgba(203, 164, 108, 0.06) 0%, transparent 70%);
+}
+.btav-mesh-gold {
+  background-image: radial-gradient(
+    55% 55% at 30% 25%,
+    rgba(203, 164, 108, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* Inline links inside legal / prose content. */
+.prose-btav a {
+  color: var(--color-signal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-btav a:hover {
+  opacity: 0.85;
+}
+
+/* ============================================================
+   GRAIN OVERLAY — fixed, full-screen, very subtle
+   ============================================================ */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/assets/textures/noise.svg');
+  background-repeat: repeat;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+}
