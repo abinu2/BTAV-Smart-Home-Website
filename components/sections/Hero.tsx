@@ -53,7 +53,7 @@ export function Hero() {
                   return (
                     <motion.span
                       key={`${w}-${idx}`}
-                      className={line.gradient ? 'inline-block text-cinematic' : 'inline-block'}
+                      className={line.gradient ? 'mr-[0.18em] inline-block text-cinematic' : 'mr-[0.18em] inline-block'}
                       initial={reduce ? false : { y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{
@@ -64,7 +64,6 @@ export function Hero() {
                       style={line.gradient ? undefined : { color: '#F2F1EC' }}
                     >
                       {w}
-                      {' '}
                     </motion.span>
                   );
                 })}

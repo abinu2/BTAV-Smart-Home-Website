@@ -2,6 +2,7 @@
 export { Hero } from './Hero';
 export { StatsBar } from './StatsBar';
 export { ServicesBento } from './ServicesBento';
+export { ConsultationFlow } from './ConsultationFlow';
 export { BrandStrip } from './BrandStrip';
 export { ProjectShowcase } from './ProjectShowcase';
 export { Testimonials } from './Testimonials';

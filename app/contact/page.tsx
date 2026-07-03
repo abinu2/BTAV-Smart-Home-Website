@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { Mail, Clock, MapPin } from 'lucide-react';
+import { CheckCircle2, Clock, Mail, MapPin } from 'lucide-react';
 import { PageHero, GradientHeadline } from '@/components/ui';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { SITE } from '@/lib/constants';
@@ -86,6 +86,24 @@ export default function ContactPage() {
                 . Every consultation is handled by a certified integrator — not a
                 call center.
               </p>
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-accent/25 bg-accent/5 p-5">
+              <h2 className="font-heading text-lg font-bold text-text-primary">
+                What happens next
+              </h2>
+              <ol className="mt-4 space-y-3 text-sm text-text-secondary">
+                {[
+                  'You submit the project brief by email-backed form.',
+                  'BTAV reviews the scope and replies within two business hours.',
+                  'A walkthrough and written proposal are scheduled if it is a fit.',
+                ].map((item) => (
+                  <li key={item} className="flex gap-2.5">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-accent" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
 

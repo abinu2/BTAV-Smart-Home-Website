@@ -37,17 +37,17 @@ export function CookieConsent() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-2xl rounded-2xl border border-border bg-[var(--glass-bg-heavy)] p-5 backdrop-blur-glass-heavy sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2"
+      className="fixed inset-x-3 bottom-3 z-50 ml-auto max-w-md rounded-2xl border border-border bg-[rgba(10,12,16,0.92)] p-4 shadow-2xl shadow-black/40 backdrop-blur-glass-heavy sm:inset-x-auto sm:right-5"
     >
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-text-secondary">
+      <div className="flex flex-col gap-3">
+        <p className="text-xs leading-relaxed text-text-secondary sm:text-sm">
           We use essential cookies to run this site. With your permission we also
           use privacy-friendly analytics to improve it.{' '}
           <Link href="/privacy" className="text-accent underline hover:opacity-80">
             Privacy Policy
           </Link>
         </p>
-        <div className="flex shrink-0 gap-2">
+        <div className="flex shrink-0 flex-wrap justify-end gap-2">
           <button
             type="button"
             onClick={() => choose('essential')}

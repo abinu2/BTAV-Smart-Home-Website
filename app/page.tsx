@@ -3,6 +3,7 @@ import {
   Hero,
   StatsBar,
   ServicesBento,
+  ConsultationFlow,
   SystemDesignShowcase,
   BrandStrip,
   ProjectShowcase,
@@ -66,6 +67,7 @@ export default function HomePage() {
       />
       <Hero />
       <StatsBar />
+      <ConsultationFlow />
       <ServicesBento />
       <SystemDesignShowcase />
       <ProjectShowcase />

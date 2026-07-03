@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Camera } from 'lucide-react';
+import { Camera, Home, Projector, Router, ShieldCheck, Waves } from 'lucide-react';
 import { CategoryPill } from '@/components/ui';
 import { hexToRgba } from '@/lib/utils';
 import type { Project } from '@/data/projects';
@@ -21,6 +21,16 @@ export interface ProjectCardProps {
  */
 export function ProjectCard({ project, heightClass = 'h-[400px]', onSelect }: ProjectCardProps) {
   const accent = project.accentColor;
+  const VisualIcon =
+    project.category === 'Automation'
+      ? Home
+      : project.category === 'Networking'
+        ? Router
+        : project.category === 'Outdoor'
+          ? Waves
+          : project.category.includes('Security')
+            ? ShieldCheck
+            : Projector;
 
   const inner = (
     <>
@@ -36,21 +46,61 @@ export function ProjectCard({ project, heightClass = 'h-[400px]', onSelect }: Pr
           />
         ) : (
           <div
-            className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+            className="relative h-full w-full overflow-hidden transition-transform duration-500 group-hover:scale-105"
             style={{
-              background: `linear-gradient(135deg, ${hexToRgba(accent, 0.28)} 0%, ${hexToRgba(
+              background: `linear-gradient(135deg, ${hexToRgba(accent, 0.24)} 0%, ${hexToRgba(
                 accent,
-                0.05,
-              )} 60%, rgba(8,12,20,0.6) 100%)`,
+                0.06,
+              )} 46%, rgba(8,12,20,0.82) 100%)`,
             }}
           >
-            <div className="flex h-full w-full items-center justify-center">
-              <Camera
-                size={40}
-                style={{ color: accent }}
-                className="opacity-40"
-                aria-hidden
-              />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage:
+                  'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
+                backgroundSize: '28px 28px',
+              }}
+            />
+            <div className="absolute inset-6 rounded-2xl border border-white/10 bg-background/20 backdrop-blur-[2px]" />
+            <div className="absolute left-8 right-8 top-10 flex items-center justify-between">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/55">
+                Visual Study
+              </span>
+              <Camera size={16} className="text-white/35" aria-hidden />
+            </div>
+            <div className="absolute inset-x-10 top-1/2 -translate-y-1/2">
+              <div className="flex items-center gap-4">
+                <span
+                  className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border"
+                  style={{
+                    borderColor: hexToRgba(accent, 0.45),
+                    backgroundColor: hexToRgba(accent, 0.13),
+                    boxShadow: `0 0 32px ${hexToRgba(accent, 0.24)}`,
+                  }}
+                >
+                  <VisualIcon size={34} style={{ color: accent }} aria-hidden />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="h-2 w-3/4 rounded-full bg-white/20" />
+                  <div className="mt-3 h-2 w-1/2 rounded-full bg-white/10" />
+                  <div
+                    className="mt-5 h-1.5 w-full rounded-full"
+                    style={{ backgroundColor: hexToRgba(accent, 0.5) }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-24 left-8 right-8 grid grid-cols-3 gap-2">
+              {project.services.slice(0, 3).map((service) => (
+                <span
+                  key={service}
+                  className="truncate rounded-full border border-white/10 bg-black/20 px-2 py-1 text-center font-mono text-[9px] uppercase tracking-wide text-white/55"
+                >
+                  {service}
+                </span>
+              ))}
             </div>
           </div>
         )}
