@@ -53,8 +53,8 @@ function productRole(name: string): string {
 
 const WHY_REASONS = (brand: Brand) => [
   {
-    title: 'Manufacturer-Certified',
-    body: `Our team is trained and certified to design, install, and support ${brand.name} the way the manufacturer intends.`,
+    title: 'Brand Specialists',
+    body: `Our team specializes in designing, installing, and supporting ${brand.name} the way it's meant to perform.`,
   },
   {
     title: 'Designed, Not Just Installed',
@@ -81,10 +81,10 @@ export default async function BrandDetailPage({
   const isControl4 = brand.slug === 'control4';
   const tierLabel =
     brand.tier === 'flagship'
-      ? 'Authorized Dealer'
+      ? 'Specialty Brand'
       : brand.tier === 'premium'
-        ? 'Certified Installer'
-        : 'Authorized Partner';
+        ? 'Installation Partner'
+        : 'Supported Brand';
 
   return (
     <>

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     default: 'BTAV Smart Home — Phoenix AV & Automation Specialists',
   },
   description:
-    'BTAV installs Control4 smart home automation, audio/video, security cameras, and enterprise WiFi across Maricopa County, Arizona. Control4 Authorized Platinum Dealer.',
+    'BTAV installs Control4 smart home automation, audio/video, security cameras, and enterprise WiFi across Maricopa County, Arizona. Control4 Specialist.',
   applicationName: 'BTAV Smart Home',
   robots: {
     index: true,
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: 'BTAV Smart Home — Phoenix AV & Automation Specialists',
     description:
-      'Control4 Authorized Platinum Dealer serving all of Maricopa County. Smart home automation, premium AV, security, and enterprise networking.',
+      'Control4 Specialist serving all of Maricopa County. Smart home automation, premium AV, security, and enterprise networking.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'BTAV Smart Home — Phoenix AV & Automation Specialists',
     description:
-      'Control4 Authorized Platinum Dealer serving all of Maricopa County, Arizona.',
+      'Control4 Specialist serving all of Maricopa County, Arizona.',
   },
 };
 
@@ -78,7 +78,8 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-background font-body text-text-primary antialiased">
-        {/* Grain overlay — fixed, full screen, behind content */}
+        {/* Ambient living background + grain — fixed, full screen, behind content */}
+        <div className="ambient" aria-hidden />
         <div className="grain" aria-hidden />
         <a
           href="#main"

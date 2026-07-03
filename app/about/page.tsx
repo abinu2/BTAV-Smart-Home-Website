@@ -15,7 +15,7 @@ import { brands } from '@/data/brands';
 export const metadata: Metadata = {
   title: 'About BTAV — Phoenix Smart Home Specialists',
   description:
-    'BTAV is a Tempe-based, Control4 Authorized Platinum Dealer delivering bespoke smart home systems across Maricopa County. Expert design, clean installation, lasting support.',
+    'BTAV is a Tempe-based, Control4 Specialist delivering bespoke smart home systems across Maricopa County. Expert design, clean installation, lasting support.',
   alternates: { canonical: '/about' },
 };
 
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 the opposite.
               </p>
               <p>
-                As a Control4 Authorized Platinum Dealer, BTAV designs, installs,
+                As a Control4 Specialist, BTAV designs, installs,
                 and programs systems for homeowners across Maricopa County — from
                 a single beautifully mounted display to a fully integrated estate
                 with lighting, climate, AV, security, and networking working as
@@ -145,8 +145,8 @@ export default function AboutPage() {
                     Founder &amp; Lead Integrator
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    <TechBadge label="Control4 Platinum" variant="dealer" />
-                    <TechBadge label="Certified Installer" variant="certified" />
+                    <TechBadge label="Control4 Specialist" variant="dealer" />
+                    <TechBadge label="Smart Home Integrator" variant="partner" />
                   </div>
                   <p className="mt-3 text-sm text-text-secondary">
                     Binu leads every BTAV project personally — from the first
@@ -159,14 +159,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Certifications — only confirmed credentials (AGENTS.md §6.3) */}
+      {/* Honest, confirmable claims only. */}
       <section className="px-5 pb-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
-          <SectionLabel>Credentials</SectionLabel>
+          <SectionLabel>Why BTAV</SectionLabel>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              { icon: Award, label: 'Control4 Authorized Platinum Dealer', color: '#CBA46C' },
-              { icon: ShieldCheck, label: 'Licensed & Insured', color: '#5FBEB2' },
+              { icon: Award, label: 'Control4 Specialist', color: '#CBA46C' },
+              { icon: ShieldCheck, label: 'Locally Owned in Tempe, AZ', color: '#5FBEB2' },
               { icon: MapPin, label: 'Serving All of Maricopa County', color: '#5FBEB2' },
             ].map((c) => (
               <div

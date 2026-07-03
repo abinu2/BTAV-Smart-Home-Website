@@ -86,7 +86,7 @@ export function customerEmailHtml(data: LeadEmailData): string {
     </p>
     <div style="padding:16px;background:rgba(95,190,178,0.08);border:1px solid rgba(95,190,178,0.2);border-radius:12px;">
       <p style="margin:0;color:${TEXT};font-size:13px;">
-        BTAV is a Control4 Authorized Platinum Dealer serving all of Maricopa County, Arizona.
+        BTAV is a Control4 Specialist serving all of Maricopa County, Arizona.
       </p>
     </div>`;
   return shell(inner);

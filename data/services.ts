@@ -177,7 +177,7 @@ export const services: Service[] = [
     tagline: 'One tap controls every system in your home.',
     short: 'Unified control of lighting, climate, AV, security, and shades.',
     overview:
-      'As a Control4 Authorized Platinum Dealer, BTAV designs and programs whole-home automation that unifies lighting, climate, audio, video, security, and shades into one elegant interface. Custom scenes, voice control, and remote access — engineered and tuned to your home.',
+      'As a Control4 Specialist, BTAV designs and programs whole-home automation that unifies lighting, climate, audio, video, security, and shades into one elegant interface. Custom scenes, voice control, and remote access — engineered and tuned to your home.',
     features: [
       'Whole-home Control4 system design & programming',
       'Custom lighting and "good night" / "away" scenes',
@@ -189,8 +189,8 @@ export const services: Service[] = [
     brands: ['control4', 'lutron', 'triad', 'sonos'],
     faqs: [
       {
-        q: 'What does "Authorized Platinum Dealer" mean?',
-        a: 'Platinum is Control4’s highest dealer tier, reflecting certified training and a track record of complex installations. It means BTAV can design, install, and program any Control4 system.',
+        q: 'Do you specialize in Control4?',
+        a: 'Yes — Control4 is our core platform. We design, install, and program complete Control4 systems and integrate them with the AV, lighting, security, and networking brands we install.',
       },
       {
         q: 'Can Control4 integrate my existing equipment?',

@@ -8,7 +8,7 @@ import { SITE } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Get a Free Smart Home Quote | BTAV Phoenix AZ',
   description:
-    'Request a free consultation from BTAV — Control4 Authorized Platinum Dealer serving Maricopa County. Tell us about your project and we’ll respond within two business hours.',
+    'Request a free consultation from BTAV — Control4 Specialist serving Maricopa County. Tell us about your project and we’ll respond within two business hours.',
   alternates: { canonical: '/contact' },
 };
 
@@ -81,9 +81,9 @@ export default function ContactPage() {
               <p className="text-sm leading-relaxed text-text-secondary">
                 BTAV is a{' '}
                 <span className="font-medium text-text-primary">
-                  Control4 Authorized Platinum Dealer
+                  Control4 Specialist
                 </span>
-                . Every consultation is handled by a certified integrator — not a
+                . Every consultation is handled by a Control4 specialist — not a
                 call center.
               </p>
             </div>

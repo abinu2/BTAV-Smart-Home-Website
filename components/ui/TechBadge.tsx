@@ -9,7 +9,7 @@ export interface TechBadgeProps {
 
 /**
  * TechBadge — credential badge.
- *  - 'dealer'    gold tint + gold border + star  (Control4 Platinum)
+ *  - 'dealer'    gold tint + gold border + star  (Control4 Specialist)
  *  - 'certified' blue tint + blue border + check
  *  - 'partner'   glass + white border + white text
  */

@@ -23,7 +23,7 @@ export const SITE = {
     { days: 'Sunday', time: 'By appointment' },
   ],
   // Marketing claims confirmed in AGENTS.md §6.3.
-  control4Tier: 'Authorized Platinum Dealer',
+  control4Tier: 'Smart Home Specialist',
 } as const;
 
 /** Primary navigation — keep ≤ 7 items (AGENTS.md §6.1). */

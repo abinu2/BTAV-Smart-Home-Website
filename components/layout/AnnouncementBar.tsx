@@ -7,7 +7,7 @@ import { SITE } from '@/lib/constants';
 const STORAGE_KEY = 'btav_announce_dismissed';
 
 /**
- * AnnouncementBar — thin top strip promoting BTAV's Control4 Platinum status.
+ * AnnouncementBar — thin top strip promoting BTAV's Control4 Specialist status.
  * Dismissible; the dismissal persists for the browser session via
  * sessionStorage. On small screens the copy scrolls as a marquee.
  *

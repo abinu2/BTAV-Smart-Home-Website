@@ -6,7 +6,7 @@ import type { Service } from '@/data/services';
 
 /**
  * ServiceCard — detail card for the services index. Premium-tier cards get a
- * gold "Control4 Certified" badge + gold-tinted border; essentials use the
+ * gold "Control4 Powered" badge + gold-tinted border; essentials use the
  * service's category accent. The whole card is glass with an accent glow.
  */
 export function ServiceCard({ service }: { service: Service }) {
@@ -39,7 +39,7 @@ export function ServiceCard({ service }: { service: Service }) {
           >
             <Icon size={24} style={{ color: accent }} />
           </span>
-          {isPremium && <TechBadge label="Control4 Certified" variant="dealer" />}
+          {isPremium && <TechBadge label="Control4 Powered" variant="dealer" />}
         </div>
 
         <h3 className="mt-5 font-heading text-xl font-bold text-text-primary">

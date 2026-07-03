@@ -16,7 +16,7 @@ import { jsonLd } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Control4 Smart Home Automation & AV Installation | Phoenix AZ',
   description:
-    'BTAV is a Control4 Authorized Platinum Dealer in Tempe, AZ — smart home automation, premium audio/video, security cameras, and enterprise WiFi across Maricopa County.',
+    'BTAV is a Control4 Specialist in Tempe, AZ — smart home automation, premium audio/video, security cameras, and enterprise WiFi across Maricopa County.',
   alternates: { canonical: '/' },
 };
 

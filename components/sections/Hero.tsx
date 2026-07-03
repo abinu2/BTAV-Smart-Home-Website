@@ -7,14 +7,14 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
 import { HeroControlPanel } from './HeroControlPanel';
 
 const HEADLINE_LINES: { text: string; gradient?: boolean }[] = [
-  { text: 'Every system.' },
-  { text: 'One flawless' },
-  { text: 'performance.', gradient: true },
+  { text: 'Intelligent spaces,' },
+  { text: 'flawlessly' },
+  { text: 'integrated.', gradient: true },
 ];
 
 const TRUST = [
-  { icon: Award, label: 'Control4 Platinum Dealer', warm: true },
-  { icon: ShieldCheck, label: 'Licensed & Insured', warm: false },
+  { icon: Award, label: 'Control4 Specialist', warm: true },
+  { icon: ShieldCheck, label: 'Locally Owned · Tempe', warm: false },
   { icon: MapPin, label: 'Maricopa County', warm: false },
 ];
 
@@ -156,25 +156,11 @@ export function Hero() {
   );
 }
 
-/** Cinematic backdrop: blueprint grid + dual-tone ambient glows + grain. */
+/** Hero backdrop: a structural blueprint grid over the global ambient field. */
 function HeroBackground() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="blueprint-grid blueprint-fade absolute inset-0 opacity-80" />
-      <div
-        className="absolute -right-20 -top-10 h-[460px] w-[460px] rounded-full blur-2xl"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(95,190,178,0.14) 0%, transparent 70%)',
-        }}
-      />
-      <div
-        className="absolute -bottom-24 -left-24 h-[360px] w-[360px] rounded-full blur-2xl"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(203,164,108,0.12) 0%, transparent 70%)',
-        }}
-      />
+      <div className="blueprint-grid blueprint-fade absolute inset-0 opacity-70" />
     </div>
   );
 }

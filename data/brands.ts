@@ -18,7 +18,7 @@ export interface Brand {
   accentColor: string;        // Hex — used as page-wide accent on /partners/[slug]
   tagline: string;
   productCount: number;
-  badge?: string;             // Special badge text (e.g. "Authorized Platinum Dealer")
+  badge?: string;             // Special badge text (e.g. "Control4 Specialist")
   subBrands?: string[];       // Sub-product lines (e.g. Lutron's family)
   tier: 'flagship' | 'premium' | 'standard';
   website: string;
@@ -39,13 +39,13 @@ export const brands: Brand[] = [
     accentColor: '#FFB800',
     tagline: 'The World\'s #1 Smart Home Platform',
     productCount: 12,
-    badge: 'AUTHORIZED PLATINUM DEALER',
+    badge: 'CONTROL4 SPECIALIST',
     tier: 'flagship',
     website: 'https://www.control4.com',
     description:
       'Control4 is the gold standard in residential automation, voted #1 by CE Pro dealers ' +
-      'for ten consecutive years. BTAV is an Authorized Platinum Dealer — the highest ' +
-      'dealer tier — certified to design, install, and program any Control4 system.',
+      'for ten consecutive years. Control4 is BTAV\'s core platform — we specialize in ' +
+      'designing, installing, and programming complete Control4 systems.',
     keyProducts: [
       'CORE Series Controllers',
       'T4 Series Touchscreens',

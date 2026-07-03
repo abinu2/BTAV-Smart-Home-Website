@@ -18,7 +18,7 @@ export interface BrandPartnerCardProps {
  * BrandPartnerCard — partner tile themed by the brand's accent color. On hover
  * it lifts, its border lights to the accent, a centered radial glow fades in,
  * and the arrow nudges right. Control4 gets the flagship treatment: gold tint,
- * gold border, a shimmering Platinum badge, and a taller grid footprint.
+ * gold border, a shimmering specialist badge, and a taller grid footprint.
  */
 export function BrandPartnerCard({ brand, onHover }: BrandPartnerCardProps) {
   const reduce = useReducedMotion();
@@ -85,7 +85,7 @@ export function BrandPartnerCard({ brand, onHover }: BrandPartnerCardProps) {
               }}
             >
               <Star size={10} className="fill-gold text-gold" />
-              Platinum Dealer
+              Control4 Specialist
             </span>
           )}
         </div>

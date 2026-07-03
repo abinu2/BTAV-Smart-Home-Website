@@ -76,7 +76,7 @@ export default function ServicesPage() {
             </h2>
             <p className="mt-2 max-w-2xl text-text-secondary">
               For homes where every system works as one. Designed and programmed
-              by a Control4 Authorized Platinum Dealer.
+              by a Control4 Specialist.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

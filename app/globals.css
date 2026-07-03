@@ -185,6 +185,67 @@ body {
 }
 
 /* ============================================================
+   AMBIENT BACKGROUND — a living, flowy field behind all content.
+   Slow-drifting warm (champagne) + cool (teal) glows over a faint
+   tech dot-grid: "cozy smart-home tech" without stealing focus.
+   Fixed, non-interactive, z-0; calms to static under reduced-motion.
+   ============================================================ */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* Flowing color field */
+.ambient::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(32% 32% at 20% 24%, rgba(95, 190, 178, 0.14), transparent 70%),
+    radial-gradient(36% 36% at 82% 28%, rgba(203, 164, 108, 0.12), transparent 70%),
+    radial-gradient(40% 40% at 64% 84%, rgba(95, 190, 178, 0.1), transparent 70%),
+    radial-gradient(32% 32% at 26% 80%, rgba(203, 164, 108, 0.09), transparent 70%);
+  animation: ambient-flow 32s ease-in-out infinite alternate;
+  will-change: transform;
+}
+/* Faint tech dot-grid, masked to fade toward the edges */
+.ambient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 80% at 50% 38%,
+    black 25%,
+    transparent 92%
+  );
+  mask-image: radial-gradient(
+    ellipse 85% 80% at 50% 38%,
+    black 25%,
+    transparent 92%
+  );
+}
+@keyframes ambient-flow {
+  0% {
+    transform: translate3d(-2%, -1.5%, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(1.5%, 1%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(2.5%, 2%, 0) scale(1.03);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient::before {
+    animation: none;
+  }
+}
+
+/* ============================================================
    GRAIN OVERLAY — fixed, full-screen, very subtle
    ============================================================ */
 .grain {

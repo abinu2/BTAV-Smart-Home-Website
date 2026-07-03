@@ -86,7 +86,7 @@ export function ServicesBento() {
                 <div className="flex items-center justify-between">
                   <CategoryPill label="Automation" color={control4.accentColor} />
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                    Platinum Dealer
+                    Control4 Specialist
                   </span>
                 </div>
 

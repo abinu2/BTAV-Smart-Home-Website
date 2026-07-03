@@ -8,14 +8,14 @@ import { brands } from '@/data/brands';
 export const metadata: Metadata = {
   title: 'Brand Partners: Control4, Lutron, Savant & More',
   description:
-    'BTAV partners with the world’s finest AV and automation brands — Control4, Lutron, Crestron, Savant, Sony, Kaleidescape, and more. Manufacturer-certified installation across Maricopa County.',
+    'BTAV installs and supports the world’s finest AV and automation brands — Control4, Lutron, Crestron, Savant, Sony, Kaleidescape, and more. Professional installation across Maricopa County.',
   alternates: { canonical: '/partners' },
 };
 
 const STAT_BADGES = [
   `${brands.length} Premium Brands`,
-  'Control4 Platinum Dealer',
-  'Certified Installers',
+  'Control4 Specialist',
+  'Expert Installation',
 ];
 
 export default function PartnersPage() {
@@ -46,9 +46,9 @@ export default function PartnersPage() {
             </span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-text-secondary">
-            We partner exclusively with the world&apos;s finest AV and automation
+            We install and support the world&apos;s finest AV and automation
             brands. Every product we install is backed by BTAV&apos;s expertise and
-            manufacturer-certified installation.
+            meticulous, professional installation.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

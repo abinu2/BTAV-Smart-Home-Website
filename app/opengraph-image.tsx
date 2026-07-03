@@ -50,7 +50,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ marginTop: 28, fontSize: 30, color: '#7A8BA8', display: 'flex' }}>
-          Control4 Authorized Platinum Dealer · Maricopa County, AZ
+          Control4 Specialist · Maricopa County, AZ
         </div>
       </div>
     ),
