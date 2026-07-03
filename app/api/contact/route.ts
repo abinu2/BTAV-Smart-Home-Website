@@ -152,26 +152,32 @@ export async function POST(req: Request) {
     console.error(`[contact ${id}] ${ts} supabase insert failed`, e);
   }
 
-  // Send emails (graceful — lead already captured if saved).
-  try {
-    const resend = new Resend(env.RESEND_API_KEY);
-    await Promise.allSettled([
-      resend.emails.send({
-        from: env.FROM_EMAIL,
-        to: env.OWNER_EMAIL,
-        replyTo: clean.email,
-        subject: `New Quote Request — ${clean.service} — ${clean.name}`,
-        html: ownerEmailHtml(clean, ts),
-      }),
-      resend.emails.send({
-        from: `BTAV Smart Home <${env.FROM_EMAIL}>`,
-        to: clean.email,
-        subject: 'We received your request — BTAV Smart Home',
-        html: customerEmailHtml(clean),
-      }),
-    ]);
-  } catch (e) {
-    console.error(`[contact ${id}] ${ts} email send failed`, e);
+  // Send emails (graceful — lead already captured if saved). Skipped entirely
+  // when Resend isn't configured yet, so leads still save without it.
+  const resendKey = env.RESEND_API_KEY;
+  if (resendKey && !resendKey.includes('placeholder')) {
+    try {
+      const resend = new Resend(resendKey);
+      await Promise.allSettled([
+        resend.emails.send({
+          from: env.FROM_EMAIL,
+          to: env.OWNER_EMAIL,
+          replyTo: clean.email,
+          subject: `New Quote Request — ${clean.service} — ${clean.name}`,
+          html: ownerEmailHtml(clean, ts),
+        }),
+        resend.emails.send({
+          from: `BTAV Smart Home <${env.FROM_EMAIL}>`,
+          to: clean.email,
+          subject: 'We received your request — BTAV Smart Home',
+          html: customerEmailHtml(clean),
+        }),
+      ]);
+    } catch (e) {
+      console.error(`[contact ${id}] ${ts} email send failed`, e);
+    }
+  } else {
+    console.info(`[contact ${id}] ${ts} email skipped (Resend not configured)`);
   }
 
   console.info(`[contact ${id}] ${ts} result=success saved=${saved}`);

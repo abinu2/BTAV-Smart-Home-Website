@@ -35,23 +35,27 @@ const clientSchema = z.object({
   NEXT_PUBLIC_VERCEL_ANALYTICS_ID: z.string().optional(),
 });
 
-/** Secrets that must never reach the client bundle. */
+/**
+ * Secrets that must never reach the client bundle.
+ *
+ * RESEND_API_KEY and the two UPSTASH_* vars are OPTIONAL: if they are not set,
+ * the build still succeeds and the app degrades gracefully at runtime — leads
+ * are still saved to Supabase, but the confirmation emails and rate limiting
+ * are skipped until those services are configured.
+ */
 const serverSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: z
     .string()
     .min(1, 'SUPABASE_SERVICE_ROLE_KEY is required'),
-  RESEND_API_KEY: z.string().min(1, 'RESEND_API_KEY is required'),
   OWNER_EMAIL: z.string().email('OWNER_EMAIL must be a valid email'),
   FROM_EMAIL: z.string().email('FROM_EMAIL must be a valid email'),
-  UPSTASH_REDIS_REST_URL: z
-    .string()
-    .url('UPSTASH_REDIS_REST_URL must be a valid URL'),
-  UPSTASH_REDIS_REST_TOKEN: z
-    .string()
-    .min(1, 'UPSTASH_REDIS_REST_TOKEN is required'),
   CSRF_SECRET: z
     .string()
     .min(32, 'CSRF_SECRET must be at least 32 characters'),
+  // Optional integrations — absence never fails the build.
+  RESEND_API_KEY: z.string().optional(),
+  UPSTASH_REDIS_REST_URL: z.string().optional(),
+  UPSTASH_REDIS_REST_TOKEN: z.string().optional(),
 });
 
 type ClientEnv = z.infer<typeof clientSchema>;
