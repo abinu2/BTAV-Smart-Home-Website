@@ -19,7 +19,7 @@ const STATS: {
 }[] = [
   { icon: Boxes, target: brands.length, suffix: '+', label: 'Premium Brands' },
   { icon: CalendarClock, target: 10, suffix: '+', label: 'Years Experience' },
-  { icon: Zap, target: 2, suffix: 'hr', label: 'Response Time' },
+  { icon: MapPin, target: SERVICE_CITIES.length, suffix: '+', label: 'Cities Served' },
   { icon: ThumbsUp, target: 100, suffix: '%', label: 'Client Satisfaction' },
 ];
 

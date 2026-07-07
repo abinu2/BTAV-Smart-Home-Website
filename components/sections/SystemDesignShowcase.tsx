@@ -273,7 +273,7 @@ export function SystemDesignShowcase() {
                     />
                   </span>
                   <span
-                    className="whitespace-nowrap rounded-full px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide transition-colors duration-300 sm:text-[10px]"
+                    className="hidden whitespace-nowrap rounded-full px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide transition-colors duration-300 sm:block sm:text-[10px]"
                     style={{
                       color: isActive ? node.color : 'var(--color-text-2)',
                       background: isActive ? 'rgba(10,12,16,0.8)' : 'transparent',
