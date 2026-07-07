@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import { AnnouncementBar, Navbar, Footer } from '@/components/layout';
 import { CookieConsent } from '@/components/CookieConsent';
@@ -96,6 +97,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );

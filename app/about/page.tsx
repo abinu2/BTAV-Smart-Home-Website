@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { target: 500, suffix: '+', label: 'Projects' },
   { target: 10, suffix: '+', label: 'Years' },
   { target: brands.length, suffix: '+', label: 'Brands' },
   { target: 100, suffix: '%', label: 'Satisfaction' },
@@ -102,7 +101,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="mt-8 grid grid-cols-3 gap-4">
               {STATS.map((s) => (
                 <div key={s.label} className="text-center sm:text-left">
                   <AnimatedCounter

@@ -1,24 +1,25 @@
 'use client';
 
-import { Building2, Boxes, CalendarClock, ThumbsUp } from 'lucide-react';
+import { Boxes, CalendarClock, ThumbsUp, MapPin, type LucideIcon } from 'lucide-react';
 import { AnimatedCounter } from '@/components/ui';
 import { brands } from '@/data/brands';
+import { SERVICE_CITIES } from '@/lib/constants';
 
 /**
  * StatsBar — kinetic numbers between Hero and Services. Counters animate on
  * scroll into view. Brand count is derived from the canonical registry so it
  * never drifts; the other figures are owner-provided marketing claims.
- * NOTE: confirm 500+ / 10+ / 100% with Binu before launch (AGENTS.md §6.3).
+ * NOTE: confirm 10+ / 100% with Binu before launch.
  */
 const STATS: {
-  icon: typeof Building2;
+  icon: LucideIcon;
   target: number;
   suffix: string;
   label: string;
 }[] = [
-  { icon: Building2, target: 500, suffix: '+', label: 'Projects Completed' },
   { icon: Boxes, target: brands.length, suffix: '+', label: 'Premium Brands' },
   { icon: CalendarClock, target: 10, suffix: '+', label: 'Years Experience' },
+  { icon: Zap, target: 2, suffix: 'hr', label: 'Response Time' },
   { icon: ThumbsUp, target: 100, suffix: '%', label: 'Client Satisfaction' },
 ];
 
@@ -34,7 +35,7 @@ export function StatsBar() {
             key={stat.label}
             className={[
               'flex flex-col items-center gap-2 px-4 py-10 text-center sm:py-14',
-              // Vertical dividers between columns (glass borders).
+              // 2×2 on mobile, single row on desktop — dividers between cells.
               i % 2 === 1 ? 'border-l border-border' : '',
               i >= 2 ? 'border-t border-border lg:border-t-0' : '',
               i !== 0 ? 'lg:border-l' : '',

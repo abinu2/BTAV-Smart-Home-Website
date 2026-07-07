@@ -197,46 +197,47 @@ body {
   overflow: hidden;
   pointer-events: none;
 }
-/* Flowing color field */
+/* Flowing color field — pronounced, slow-moving aurora of teal + champagne. */
 .ambient::before {
   content: '';
   position: absolute;
-  inset: -30%;
+  inset: -40%;
   background:
-    radial-gradient(32% 32% at 20% 24%, rgba(95, 190, 178, 0.14), transparent 70%),
-    radial-gradient(36% 36% at 82% 28%, rgba(203, 164, 108, 0.12), transparent 70%),
-    radial-gradient(40% 40% at 64% 84%, rgba(95, 190, 178, 0.1), transparent 70%),
-    radial-gradient(32% 32% at 26% 80%, rgba(203, 164, 108, 0.09), transparent 70%);
-  animation: ambient-flow 32s ease-in-out infinite alternate;
+    radial-gradient(40% 40% at 18% 22%, rgba(95, 190, 178, 0.32), transparent 66%),
+    radial-gradient(44% 44% at 84% 26%, rgba(203, 164, 108, 0.28), transparent 66%),
+    radial-gradient(48% 48% at 66% 88%, rgba(95, 190, 178, 0.26), transparent 66%),
+    radial-gradient(40% 40% at 24% 82%, rgba(203, 164, 108, 0.24), transparent 66%),
+    radial-gradient(30% 30% at 50% 50%, rgba(95, 190, 178, 0.14), transparent 70%);
+  animation: ambient-flow 22s ease-in-out infinite alternate;
   will-change: transform;
 }
-/* Faint tech dot-grid, masked to fade toward the edges */
+/* Tech dot-grid, masked to fade toward the edges */
 .ambient::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
   -webkit-mask-image: radial-gradient(
-    ellipse 85% 80% at 50% 38%,
-    black 25%,
-    transparent 92%
+    ellipse 90% 85% at 50% 40%,
+    black 30%,
+    transparent 95%
   );
   mask-image: radial-gradient(
-    ellipse 85% 80% at 50% 38%,
-    black 25%,
-    transparent 92%
+    ellipse 90% 85% at 50% 40%,
+    black 30%,
+    transparent 95%
   );
 }
 @keyframes ambient-flow {
   0% {
-    transform: translate3d(-2%, -1.5%, 0) scale(1.02);
+    transform: translate3d(-5%, -4%, 0) scale(1.05) rotate(-1deg);
   }
   50% {
-    transform: translate3d(1.5%, 1%, 0) scale(1.05);
+    transform: translate3d(4%, 2%, 0) scale(1.12) rotate(1deg);
   }
   100% {
-    transform: translate3d(2.5%, 2%, 0) scale(1.03);
+    transform: translate3d(6%, 5%, 0) scale(1.06) rotate(0deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {

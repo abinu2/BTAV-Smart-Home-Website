@@ -7,9 +7,9 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
 import { HeroControlPanel } from './HeroControlPanel';
 
 const HEADLINE_LINES: { text: string; gradient?: boolean }[] = [
-  { text: 'Intelligent spaces,' },
-  { text: 'flawlessly' },
-  { text: 'integrated.', gradient: true },
+  { text: 'Intelligent Spaces,' },
+  { text: 'Flawlessly' },
+  { text: 'Integrated.', gradient: true },
 ];
 
 const TRUST = [
